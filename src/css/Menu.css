@@ -1,0 +1,38 @@
+.menu {
+  width: 35%;
+  margin-top: 25px;
+  display: flex;
+}
+
+.search-main {
+  width: 300px;
+}
+
+.input {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.input > h3 {
+  height: 21px;
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #b9bdcf;
+}
+.radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+button {
+  margin-bottom: 15px;
+  background-color: blue;
+  width: 120px;
+  height: 36px;
+  border-radius: 15px;
+  color: white;
+  font-family: Poppins;
+  font-weight: bold;
+}

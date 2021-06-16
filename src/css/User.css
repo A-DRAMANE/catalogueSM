@@ -1,0 +1,8 @@
+.user {
+}
+.user > img {
+  width: 74px;
+  height: 74px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
