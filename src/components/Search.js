@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import {Cars} from '../dataCars'
 import {DataContext} from '../Context'
+import '../css/Search.css'
 
 function Search() {
 
@@ -12,11 +13,11 @@ function Search() {
         <div className="product" key={i++} id={i++}>
             <p>{car.field2} de {car.field5} </p>
             <button>details...</button>  
-        </div> : "Serach"
+        </div> : ""
     )
 
     return (
-        <div>
+        <div className='search'>
             {itemsList}
         </div>
     )

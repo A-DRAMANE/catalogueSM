@@ -28,7 +28,12 @@ function Menu() {
 
     const handleSearch = (e) =>{
         e.preventDefault();
-        history.push("/search");
+        if (data.search === " ") {
+            history.push("/list");
+        }else{
+            history.push("/search");
+        }
+        
     }
 
     return (

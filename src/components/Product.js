@@ -1,9 +1,7 @@
 import React from 'react'
-import {Cars} from '../dataCars'
 import '../css/Product.css'
 
-function Product() {
-    let DataCars = []
+function Product({Cars}) {
     let i = 0;
 
     console.log(Cars);

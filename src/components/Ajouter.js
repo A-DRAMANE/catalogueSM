@@ -2,14 +2,15 @@ import React from 'react'
 
 const handleSend = (e) => {
     e.preventDefault();
+    let user = JSON.stringify(
+        {
+        nom:"dramane",
+        prnom:"abdoul"
+    }
+    )
+    console.log(user);
 
-    fetch('http://localhost/SM/API.php').then(response => {
-        
-        console.log(response.json());
-    })
-      .catch(function(error) {
-        console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
-      });
+    fetch('http://localhost:4000/index.php?USER='+user)
 }
 
 function Ajouter() {
