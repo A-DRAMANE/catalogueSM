@@ -15,11 +15,18 @@ export function getSurname () {
     }else return false;
 }
 
-export function getFileUrll () {
-    let result = localStorage.getItem('url');
+export function getCars () {
+    let result = localStorage.getItem('cars');
     if(result !== "undefined") {
         let data = JSON.parse(result);
         return data;
     }else return false;
 }
 
+export function getId () {
+    let result = localStorage.getItem('id');
+    if(result !== "undefined") {
+        let data = JSON.parse(result);
+        return data;
+    }else return false;
+}

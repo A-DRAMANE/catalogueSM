@@ -1,24 +1,39 @@
 import React, { useContext } from 'react'
-import {Cars} from '../dataCars'
+import {getCars} from '../localStorage/getData'
+import { useHistory } from 'react-router';
+import {setId} from '../localStorage/setData'
+import '../css/Product.css'
+
+
 import {DataContext} from '../Context'
 import '../css/Search.css'
 
 function Search() {
 
-    let i = 0;
-
+    let history = useHistory();
     const [data, setData] = useContext(DataContext)
+    
 
-    let itemsList = Cars.map(car => car.field2 === data.search ? 
-        <div className="product" key={i++} id={i++}>
-            <p>{car.field2} de {car.field5} </p>
-            <button>details...</button>  
-        </div> : ""
-    )
+    const handleDetail= (e) =>{
+        setId(e.target.id)
+        history.push('/detail')
+    }
+
+    const listItems = getCars().map((car) => car.vehicule === data.search ? 
+        <div className="product" key={car.id} id={car.id}>
+            <div style={{display:'flex',justifyContent:'space-between',width:'90%'}}>
+                <p>{car.vehicule} de {car.annee} </p>
+                <p  id={car.id}
+                    onClick={e => handleDetail(e)}
+                    style={{color:'blue',cursor:'pointer'}}>details...</p>
+            </div>
+        </div> : ''
+        );
 
     return (
         <div className='search'>
-            {itemsList}
+            <h1>RECHERCHE</h1>
+            {listItems}
         </div>
     )
 }

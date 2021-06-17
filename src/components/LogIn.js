@@ -15,8 +15,35 @@ function LogIn() {
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
 
+    if (data.nom == " ") {
+    fetch("http://localhost:4000/index.php?callData")
+    .then((response) => response.json())
+    .then((response) => {
+        let curentUser = JSON.parse(response.USER)
+        setData({
+            nom:curentUser[0].nom,
+            prenom:curentUser[0].prenom,
+            url:'',
+        })
+        console.log(curentUser);
+    })
+    .catch((response) => console.log("ERREUR CHARGEMENT",response))
+    }
+
+    
+
     const handleConnect = (e) =>{
         e.preventDefault();
+
+        let user = JSON.stringify([
+            {
+            nom:data.nom,
+            prenom:data.prenom
+        }])
+
+        //sauvegarde les donner du clients
+        fetch("http://localhost:4000/index.php?USER="+user)
+        
         setUseName(name)
         setUserSurname(surname)
         if (getName()) {

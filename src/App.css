@@ -7,3 +7,10 @@
   display: flex;
   margin-top: 64px;
 }
+
+@media screen and (max-width: 980px) {
+  .main {
+    display: block;
+    margin-top: 0px;
+  }
+}

@@ -1,18 +1,19 @@
 import React from 'react'
 import {setId} from '../localStorage/setData'
+import {getCars} from '../localStorage/getData'
 import '../css/Product.css'
 import { useHistory } from 'react-router';
 
-function Product({Cars}) {
+function ShowCat({Categorie}) {
     let history = useHistory();
-    
+    console.log(getCars());
 
     const handleDetail= (e) =>{
         setId(e.target.id)
         history.push('/detail')
     }
 
-    const listItems = Cars.map((car) =>  
+    const listItems = getCars().map((car) => car.categori === Categorie ?
     <div className="product" key={car.id} id={car.id}>
         <div style={{display:'flex',justifyContent:'space-between',width:'90%'}}>
             <p>{car.vehicule} de {car.annee} </p>
@@ -20,11 +21,12 @@ function Product({Cars}) {
                 onClick={e => handleDetail(e)}
                 style={{color:'blue',cursor:'pointer'}}>details...</p>
         </div>
-    </div>);
+    </div> : ''
+    );
 
     return (
         listItems
     )
 }
 
-export default Product
+export default ShowCat

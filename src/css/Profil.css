@@ -12,3 +12,22 @@
   border: 2px solid black;
   border-radius: 15px;
 }
+.profile > form {
+  background: whitesmoke;
+  width: 56%;
+  border-radius: 30px;
+  box-shadow: 0 0 2em #505959;
+}
+
+@media screen and (max-width: 980px) {
+  .profile {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+    padding: 0px;
+  }
+  .profile > form {
+    width: 100%;
+  }
+}

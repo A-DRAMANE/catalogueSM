@@ -28,7 +28,7 @@ function Menu() {
 
     const handleSearch = (e) =>{
         e.preventDefault();
-        if (data.search === " ") {
+        if (data.search === ' ') {
             history.push("/list");
         }else{
             history.push("/search");
@@ -44,6 +44,7 @@ function Menu() {
                     <h3>Chercher un véhicul</h3>
                     <input
                         type="search"
+                        placeholder='nom du vehicule'
                         onChange={(e) => {
                             setData({
                                 nom:nom,

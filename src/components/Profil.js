@@ -5,10 +5,11 @@ import '../css/Profil.css'
 import {app} from '../base'
 
 function Profil() {
+
+    //global variable
     let history = useHistory();
-
+    const [alt, setalt] = useState('')
     const [data, setData] = useContext(DataContext)
-
     const [fileUrl, setFileUrl] = useState("")
     let nom = data.nom
     let prenom = data.prenom
@@ -19,6 +20,7 @@ function Profil() {
     //storage pic to firebase
     const handleLoad = async (e) => {
         
+        setalt('Chargement...')
         const file = e.target.files[0]
         const storageRef = app.storage().ref()
         const fileRef = storageRef.child(file.name)
@@ -29,9 +31,20 @@ function Profil() {
         prenom:prenom,
         url: await fileRef.getDownloadURL()
     })
-    }
+    setalt('derminé')
+}
 
+    //save user's news datas
     const valider = async (e) =>{
+        let user = JSON.stringify([
+            {
+            nom:data.nom,
+            prenom:data.prenom,
+            url: data.url
+        }])
+
+        //call API for save
+        fetch("http://localhost:4000/index.php?USER="+user)
         e.preventDefault()
         history.push('/list')
     }
@@ -44,11 +57,13 @@ function Profil() {
 
     return (
         <div className="profile">
+            <form>
             <p style={{color:'blue',cursor:'pointer'}} onClick={Ajouter}>Ajouter Un nouveau Produit</p>
             <p>MODIFIER LE PROFILE</p>
 
             <input type="text"
             value={data.nom}
+            placeholder='NOM'
             onChange={e => {
                 setData(
                     {
@@ -61,6 +76,7 @@ function Profil() {
 
             <input type="text"
             value={data.prenom}
+            placeholder='PRENOM'
             onChange={e => {
                 setData(
                     {
@@ -71,7 +87,8 @@ function Profil() {
                 )}}
             />
             <p>choisir une photo</p>
-            <img className="photo" alt="photo" src={fileUrl} /> 
+            <img className="photo" alt='photo' src={fileUrl} /> 
+            <p>{alt}</p>
             <input
             className='input' 
               type="file" 
@@ -84,6 +101,7 @@ function Profil() {
                
             
             <button onClick={valider}>Validé</button>
+        </form>
               
         </div>
     )
