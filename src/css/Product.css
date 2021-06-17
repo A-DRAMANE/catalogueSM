@@ -1,10 +1,14 @@
 .product {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 2px solid black;
-    width: 77%;
-    background-color: aliceblue;
-    border-radius: 20px;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px solid black;
+  width: 77%;
+  background-color: aliceblue;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.comment {
+  font-size: 22px;
+  font-weight: bold;
 }

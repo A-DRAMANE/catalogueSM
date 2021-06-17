@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: column;
   width: 65%;
+  margin-top: 30px;
   padding: 35px;
 }
 .photo {
@@ -17,6 +18,27 @@
   width: 56%;
   border-radius: 30px;
   box-shadow: 0 0 2em #505959;
+}
+
+.load {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  border: 5px solid #e5e5e5;
+  border-radius: 50%;
+  border-top: 5px solid blue;
+  box-shadow: 0, 0, 6px, 2px black;
+  animation: loader 1s linear infinite;
+  align-self: center;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 980px) {

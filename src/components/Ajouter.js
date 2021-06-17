@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { setCars } from '../localStorage/setData'
+import { useHistory } from 'react-router';
 import '../css/Ajouter.css'
 
 
@@ -12,7 +13,7 @@ function Ajouter() {
     const [prix, setprix] = useState('')
     const [annee, setannee] = useState('')
     const [description, setdescription] = useState('')
-    const [select, setselect] = useState('')
+    let history = useHistory();
 
     const handleSend = (e) => {
     e.preventDefault();
@@ -40,12 +41,13 @@ function Ajouter() {
         ADD = JSON.stringify(ADD)
 
         fetch("http://localhost:4000/index.php?ADD="+ADD)
+        history.push('/list')
     })
     .catch((response) => console.log("ERREUR CHARGEMENT",response))
+    history.push('/profil')
 
     
     }
-    console.log(categori);
 
     return (
         <div className='ajouter'>
@@ -65,6 +67,7 @@ function Ajouter() {
 
             <p> Marque du vehicule</p>
             <input
+                required
                 type="text"
                 placeholder="Entrer"
                 onChange={e => setvehicule(e.target.value)}
@@ -72,6 +75,7 @@ function Ajouter() {
 
             <p> Année de série</p>
             <input
+                required
                 type="number"
                 placeholder="Entrer"
                 onChange={e => setannee(e.target.value)}
@@ -79,6 +83,7 @@ function Ajouter() {
 
             <p> PRIX en FCFA</p>
             <input
+                required
                 type="number"
                 placeholder="Entrer"
                 onChange={e => setprix(e.target.value)}
@@ -90,7 +95,7 @@ function Ajouter() {
             >
             </textarea>
 
-            <button>VALIDE</button>
+            <button className='sub'>VALIDE</button>
 
             </form>
 

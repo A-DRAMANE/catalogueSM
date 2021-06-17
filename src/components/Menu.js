@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { useHistory } from 'react-router';
+import {getCars} from '../localStorage/getData'
 import {DataContext} from '../Context'
 import '../css/Menu.css'
 
@@ -22,6 +23,9 @@ function Menu() {
         history.push("/categuorie");
     }
     const handleOut = (e) =>{
+        setData({
+            nom : ""
+        })
         e.preventDefault();
         history.push("/");
     }

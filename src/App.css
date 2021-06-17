@@ -3,7 +3,7 @@
   height: 100%;
   margin: auto;
 }
-.main{
+.main {
   display: flex;
   margin-top: 64px;
 }
@@ -13,4 +13,14 @@
     display: block;
     margin-top: 0px;
   }
+}
+.sub {
+  width: 122px;
+  height: 40px;
+  color: #ffffff;
+  background: #f9a826;
+  border-radius: 12px;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
 }

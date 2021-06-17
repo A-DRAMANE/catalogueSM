@@ -30,3 +30,11 @@ export function getId () {
         return data;
     }else return false;
 }
+
+export function getUserInfo () {
+    let result = localStorage.getItem('USER');
+    if(result !== "undefined") {
+        let data = JSON.parse(result);
+        return data;
+    }else return false;
+}

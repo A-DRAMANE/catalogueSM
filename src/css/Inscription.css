@@ -31,7 +31,7 @@ input {
 }
 
 @media screen and (max-width: 980px) {
-  form {
-        width: 90%;
-      }
+form {
+      width: 90%;
     }
+  }

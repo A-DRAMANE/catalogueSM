@@ -27,12 +27,21 @@
   flex-direction: column;
 }
 button {
-  margin-bottom: 15px;
-  background-color: blue;
-  width: 120px;
-  height: 36px;
-  border-radius: 15px;
-  color: white;
-  font-family: Poppins;
-  font-weight: bold;
+  cursor: pointer;
+  width: 139px;
+  height: 44px;
+  border: 2px solid #1d355d;
+  box-sizing: border-box;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 980px) {
+  .radio {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-betwee;
+  }
+  button{
+    margin: 5px;
+  }
 }

@@ -8,4 +8,10 @@
   border-radius: 30px;
   box-shadow: 0 0 2em #505959;
   padding: 30px;
+  margin-top: 30px;
 }
+@media screen and (max-width: 980px) {
+  .ListProduct {
+        width: 84%;
+      }
+    }

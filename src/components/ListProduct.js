@@ -5,7 +5,6 @@ import {getCars} from '../localStorage/getData'
 
 
 function ListProduct() {
-
     console.log(localStorage);
     return (
         <div className="ListProduct">

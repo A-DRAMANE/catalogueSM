@@ -5,17 +5,16 @@ import '../css/Detail.css'
 
 function Detail() {
 
-    console.log(getId(),getCars());
 
     let element = getCars().map(car => {
     
         if (car.id === parseInt(getId())) {
-            return <div className='detail'>
+            return <div key={parseInt(getId())} className='detail'>
             <h1>{car.vehicule}</h1>
             <div className='detailIn'>
-                <p>Une voiture de {car.annee}, {car.categori}</p> 
-                <p>description: {car.description}</p> 
-                <p>PRIX: {car.prix} FCFA</p> 
+                <p className='tag'>Une voiture de {car.annee}, {car.categori}</p> 
+                <p><span>Description</span> : {car.description}</p> 
+                <p><span>PRIX</span>: {car.prix} FCFA</p> 
             </div>
             </div>;  
         }

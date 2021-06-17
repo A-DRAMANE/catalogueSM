@@ -23,8 +23,8 @@
             //user
             $User    = fopen( "USER.txt", "r+" );
             $UserContent = "";
-            for( $i = 0 ; $i < 10 ; $i++ ){
-            $UserContent .= fgets($User);
+            for( $i = 0 ; $i < 100 ; $i++ ){
+            $UserContent .= fgets($User,4096);
             }
 
             $response['USER'] = $UserContent;

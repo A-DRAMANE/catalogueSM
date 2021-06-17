@@ -15,7 +15,7 @@ function Product({Cars}) {
     const listItems = Cars.map((car) =>  
     <div className="product" key={car.id} id={car.id}>
         <div style={{display:'flex',justifyContent:'space-between',width:'90%'}}>
-            <p>{car.vehicule} de {car.annee} </p>
+            <p className="comment">{car.vehicule} de {car.annee} </p>
             <p  id={car.id}
                 onClick={e => handleDetail(e)}
                 style={{color:'blue',cursor:'pointer'}}>details...</p>

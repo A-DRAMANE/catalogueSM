@@ -9,6 +9,7 @@ import Detail from './components/Detail'
 import Ajouter from './components/Ajouter'
 import Search from './components/Search'
 import {getName} from './localStorage/getData'
+import Inscription from './components/Inscription'
 import { BrowserRouter as Router,Switch, Route  } from "react-router-dom";
 import {DataProvider} from './Context'
 import './App.css'
@@ -56,6 +57,10 @@ function App() {
 
             <Route  path='/ajouter'>
                 <Ajouter/>
+            </Route>
+
+            <Route  path='/inscription'>
+                <Inscription/>
             </Route>
         </Switch>
         </div>

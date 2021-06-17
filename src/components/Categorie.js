@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import {getCars} from '../localStorage/getData'
+import '../css/Categorie.css'
+
 import ShowCat from './ShowCat'
 
 function Categorie() {
